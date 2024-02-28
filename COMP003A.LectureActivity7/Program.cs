@@ -25,7 +25,43 @@ namespace COMP003A.LectureActivity7
 
 
             // array2 declaration with values
+            int[] array2 = new int[] { 1, 3, 5, 7, 9 }; // declares a single-dimensional array element with values
 
+            /* arrays are zero-indexed, meaning the first 'position' starts at index 0
+             * values in an array can be accessed using the syntax below:
+             * arrayName[indexNumber]
+             * 
+             * e.g.,
+             * int[] array2 = new int[] { 1, 3, 5, 7, 9 };
+             * array2[0] -> returns 1
+             * array2[1] -> returns 3
+             * array2[2] -> returns 5
+             * array2[3] -> returns 7
+             * array2[4] -> returns 9
+             * array2[5] -> RUNTIME ERROR: OutOfBoundsException
+             * 
+             * It is important to note that arrays cannot be dynamically resized.
+             * They are stored in sequential blocks of memory, making it extremely fast to access them.
+             * Also, you will get a runtime error of OutOfBoundsException
+             * when accessing an index that does not exist
+             */
+            Console.WriteLine("array2 Traversal");
+            ArrayTraversal(array2);
+
+
+            // integer array traversal
+            int[] grades = new int[] { 100, 85, 92, 87, 91, 78, 89 };
+            Console.WriteLine($"\ngrades Average: {GetAverage(grades)}");
+
+
+            // string array traversal
+            Console.WriteLine("\nstring Traversal");
+            // strings are special object consisting of an array of characters
+            string message = "hello";
+            ArrayTraversal(message);
+
+
+            SectionSeparator("Lists");
         }
     }
 }
